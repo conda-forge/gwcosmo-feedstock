@@ -21,8 +21,8 @@ requirements:
     - setuptools-scm
     - pip
   run:
+    - astropy-base
     - python >={{ python_min }}
-    - astropy
     - bilby
     - h5py
     - healpy
