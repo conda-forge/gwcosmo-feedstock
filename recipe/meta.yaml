@@ -1,13 +1,13 @@
 {% set name = "gwcosmo" %}
-{% set version = "2.1.1" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gwcosmo-{{ version }}.tar.gz
-  sha256: d20b8febc7c4dc3b4a2c625aec7916900035a20f85d0012ecfc49ea123f9733b
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gwcosmo-{{ version }}.tar.gz
+  sha256: 3a602676c9fae93441c079f060a315ea3ab13ac6d21f5fbfaa2f673873ff202b
 
 build:
   noarch: python
@@ -16,13 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=61.0
     - setuptools-scm
     - pip
   run:
-    - python >=3.8
     - astropy-base
+    - python >={{ python_min }}
     - bilby
     - h5py
     - healpy
@@ -46,6 +46,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://lscsoft.docs.ligo.org/gwcosmo/
