@@ -1,18 +1,18 @@
 {% set name = "gwcosmo" %}
-{% set version = "3.0.0" %}
+{% set version = "3.2.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gwcosmo-{{ version }}.tar.gz
-  sha256: 3a602676c9fae93441c079f060a315ea3ab13ac6d21f5fbfaa2f673873ff202b
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/gwcosmo-{{ version }}.tar.gz
+  sha256: 4cd4097c22363c340ba33a88beb523152e2b7209521d391b9f2741038c06f20a
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
